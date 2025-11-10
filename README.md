@@ -1,15 +1,14 @@
 
-This project is an in-house project.
 This project is a subproject of https://github.com/X-LANCE/SLAM-LLM.  
 
 # LLM-SRT
 
 ## Model Stracture
-<img src="examples/st_covost2/image/framework.jpg" alt="Photo" style="width:75%;">
+<img src="SLAM-LLM/examples/st_covost2/image/framework.jpg" alt="Photo" style="width:75%;">
 
 
 ## Multitask 
-<img src="examples/st_covost2/image/prompt.png" alt="Photo" style="width:100%;">
+<img src="SLAM-LLM/examples/st_covost2/image/prompt.png" alt="Photo" style="width:100%;">
 
 
 ## Installation
@@ -17,28 +16,25 @@ This project is a subproject of https://github.com/X-LANCE/SLAM-LLM.
 conda create -n llm-srt python=3.10
 conda activate llm-srt
 
-git clone https://github.com/yxduir/LLM-SRT
-cd LLM-SRT
+git clone https://github.com/yxduir/m2m-70
+cd m2m-70/SLAM-LLM
 
 pip install -e .
 sudo apt install ffmpeg
 pip install -r requirements.txt
-```
 
+```
 ## Download Model 
-We only train the q-former projector in this recipe.
 Encoder | Adapter | LLM 
 |---|---|---
-[whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | [q-former+mlp](https://huggingface.co/yxdu/llm-srt) | [Qwen2.5-3B](https://huggingface.co/Qwen/Qwen2.5-3B) 
+[whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | [Adapter](https://huggingface.co/yxdu/srt-large) | [Gemma-3-27b-it](https://huggingface.co/google/gemma-3-27b-it) 
 ```
-mkdir models
-cd models/
-
-git lfs clone https://huggingface.co/yxdu/llm-srt
+cd m2m-70/models/
 git lfs clone https://huggingface.co/openai/whisper-large-v3
-# for 3B model (support 15 languages)
-git lfs clone https://huggingface.co/Qwen/Qwen2.5-3B
+git lfs clone https://huggingface.co/yxdu/srt-large
+git lfs clone https://huggingface.co/google/gemma-3-27b-it
 ```
+
 
 ## Infer Demo
 This is an automatic inference script for the fleurs dataset from English (eng) to Chinese (zho).
