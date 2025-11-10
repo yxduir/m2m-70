@@ -1,7 +1,7 @@
 
 This project is a subproject of https://github.com/X-LANCE/SLAM-LLM.  
 
-# LLM-SRT
+# SRT-Large
 
 ## 70 Languages
 <img src="SLAM-LLM/examples/st_covost2/image/70_language.png" alt="Photo" style="width:75%;">
