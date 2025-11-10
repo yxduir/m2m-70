@@ -21,5 +21,4 @@ scripts_all
 examples/hotwords_librispeech
 examples/asr_librispeech/scripts/decode_hubert_xtralarge_linear_vicuna_7b_debug.sh
 *.pt
-evaluation
 nohup.out

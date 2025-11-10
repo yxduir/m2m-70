@@ -74,19 +74,13 @@ echo "=== 检查完成 ==="
 
 
 
-
-# train_data_path=${code}/../data/fleurs/wavs/train_300_30.jsonl
-# val_data_path=${code}/../data/fleurs_all/data/71_67_srt.jsonl
-
-
 echo "${val_data_path}"
 mode=srt
 encoder_projector=qqm
 source=all
 peft=true
-# 根据 peft 的值设置 freeze_llm 的相反值
+freeze_llm="false"
 
-freeze_llm="true"
 # 根据 encoder_projector 设置参数
 if [ "$encoder_projector" = "qqm" ]; then
   query_len=150
@@ -95,11 +89,7 @@ if [ "$encoder_projector" = "qqm" ]; then
   peft=true
 fi
 
-if [ "$peft" = "true" ]; then
-    freeze_llm="false"
-else
-    freeze_llm="true"
-fi
+
 
 
 
