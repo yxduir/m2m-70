@@ -34,7 +34,6 @@ import os
 import logging
 from tqdm import tqdm
 from model.slam_model_st import model_factory
-from model.slm_model import CustomSLM
 from transformers import  AutoTokenizer,AutoConfig,AutoModel
 
 import hydra
