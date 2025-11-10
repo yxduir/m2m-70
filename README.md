@@ -29,15 +29,18 @@ Encoder | Adapter | LLM
 [whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) | [Adapter](https://huggingface.co/yxdu/srt-large) | [Gemma-3-27b-it](https://huggingface.co/google/gemma-3-27b-it) 
 ```
 cd models/
+# Total 200G of storage space for models
 git lfs clone https://huggingface.co/openai/whisper-large-v3
 git lfs clone https://huggingface.co/yxdu/srt-large
+# Access to the Gemma models is required before using git lfs.
 git lfs clone https://huggingface.co/google/gemma-3-27b-it
 ```
 
 
 ## Infer Demo
 This is a demo inference script for the FLEURS dataset, covering translation between 70 languages, with a total of 70×69=4,830 directions.
-This demo will automatically download the model and dataset from Hugging Face, which require approximately 200 GB of storage space. GPUs requires 80 GB of VRAM.
+This demo automatically downloads the 5 GB dataset from Hugging Face.
+GPUs requires 80 GB of VRAM.
 ```
 bash scripts/infer_demo.sh
 ```
