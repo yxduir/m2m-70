@@ -1,5 +1,5 @@
 
-This project is a subproject of https://github.com/X-LANCE/SLAM-LLM.  
+This project is a subproject of https://github.com/yxduir/LLM-SRT and https://github.com/X-LANCE/SLAM-LLM.  
 
 # SRT-Large
 
@@ -21,6 +21,7 @@ sudo apt install git-lfs
 
 pip install -r requirements.txt
 pip install -e .
+cd ..
 ```
 
 ## Download Model 
@@ -34,13 +35,14 @@ git lfs clone https://huggingface.co/openai/whisper-large-v3
 git lfs clone https://huggingface.co/yxdu/srt-large
 # Access to the Gemma models is required before using git lfs.
 git lfs clone https://huggingface.co/google/gemma-3-27b-it
+cd ..
 ```
 
 
 ## Infer Demo
-This is a demo inference script for the FLEURS dataset, covering translation between 70 languages, with a total of 70×69=4,830 directions.
-This demo automatically downloads the 9 GB dataset from Hugging Face.
-GPUs requires 80 GB of VRAM.
+This is a demo inference script, covering translation between 70 languages, with a total of 70×69=4,830 directions.
+This demo downloads the 9 GB dataset from HuggingFace.
+It requires GPUs with 80GB VRAM, with support for BF16 only.
 ```
 bash scripts/infer_demo.sh
 ```

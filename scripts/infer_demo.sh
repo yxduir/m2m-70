@@ -1,7 +1,7 @@
 export MASTER_ADDR=localhost
 export MASTER_PORT=12345
 export WANDB_MODE=offline
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+export CUDA_VISIBLE_DEVICES=0
 
 # 设置 GPU 数量
 if [ -n "$CUDA_VISIBLE_DEVICES" ]; then
@@ -31,11 +31,7 @@ ckpt_name=${code}/../models/srt-large/srt_large_27b.pt
 llm_path=${code}/../models/gemma-3-27b-it
 val_data_path=${code}/../data/s2tt/srt_demo_70.jsonl
 
-models_dir="${code}/../models"
 data_dir="${code}/../data"
-
-# 创建目录
-mkdir -p "$models_dir" "$data_dir"
 
 # 检查并下载函数
 check_and_download() {
@@ -84,11 +80,6 @@ if [ "$encoder_projector" = "qqm" ]; then
   peft=true
 fi
 
-
-
-
-
-
 echo "找到的最新 .pt 文件为: $ckpt_name"
 
 # 设置 decode log 路径
@@ -135,8 +126,8 @@ torchrun \
     ++train_config.freeze_llm=$freeze_llm \
     ++train_config.batching_strategy=custom \
     ++train_config.num_epochs=1 \
-    ++train_config.val_batch_size=50 \
-    ++train_config.num_workers_dataloader=25 \
+    ++train_config.val_batch_size=64 \
+    ++train_config.num_workers_dataloader=16 \
     ++log_config.decode_log=$decode_log \
     ++ckpt_path=$ckpt_name \
     ++train_config.use_peft=${peft} 
