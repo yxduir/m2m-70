@@ -1,6 +1,3 @@
-
-This project is a subproject of https://github.com/yxduir/LLM-SRT and https://github.com/X-LANCE/SLAM-LLM.  
-
 # MCAT Models
 
 ## 70 Languages
