@@ -1,6 +1,6 @@
 # MCAT Models
 
-## 70 Languages
+## Language Support
 <img src="SLAM-LLM/examples/st_covost2/image/70_language.png" alt="Photo" style="width:50%;">
 
 
