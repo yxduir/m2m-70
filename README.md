@@ -59,12 +59,10 @@ You can refer to the paper for more results.
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2512.01512}, 
 }
-
 @article{du2025speech2text,  
   title     = {Making LLMs Better Many-to-Many Speech-to-Text Translators with Curriculum Learning},
   author    = {Du, Yexing and Pan, Youcheng and Ma, Ziyang and Yang, Bo and Yang, Yifang and Deng, Keqi and Chen, Xie and Xiang, Yang and Liu, Ming and Qin, Bing},
   booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025)},
   year      = {2025},
 }
-
 ```
