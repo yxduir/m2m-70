@@ -1,8 +1,13 @@
 # MCAT Models
 
-## Language Support
-<img src="SLAM-LLM/examples/st_covost2/image/70_language.png" alt="Photo" style="width:50%;">
 
+**LLM-SRT (v1.0) paper**: [https://arxiv.org/abs/2409.19510](https://arxiv.org/abs/2409.19510) [ACL 2025 Main]; 
+
+**MCAT (v2.0) paper**: [https://arxiv.org/abs/2512.01512v1](https://arxiv.org/abs/2512.01512v1); 
+
+✅ **Current Version MCAT (v2.0)**  
+- **Supported 70 Languages**: afr (Afrikaans), amh (Amharic), ara (Arabic), asm (Assamese), azj (Azerbaijani), bel (Belarusian), ben (Bengali), bos (Bosnian), bul (Bulgarian), cat (Catalan), ces (Czech), cmn (Chinese), cym (Welsh), dan (Danish), deu (German), ell (Greek), eng (English), est (Estonian), fas (Persian), fin (Finnish), fra (French), glg (Galician), guj (Gujarati), heb (Hebrew), hin (Hindi), hrv (Croatian), hun (Hungarian), hye (Armenian), ind (Indonesian), isl (Icelandic), ita (Italian), jav (Javanese), jpn (Japanese), kan (Kannada), kat (Georgian), kaz (Kazakh), khm (Khmer), kir (Kyrgyz), kor (Korean), lao (Lao), lav (Latvian), lit (Lithuanian), mal (Malayalam), mkd (Macedonian), msa (Malay), mya (Burmese), nld (Dutch), nob (Norwegian), npi (Nepali), pan (Punjabi), pol (Polish), por (Portuguese), ron (Romanian), rus (Russian), slk (Slovak), slv (Slovenian), spa (Spanish), srp (Serbian), swe (Swedish), swh (Swahili), tam (Tamil), tel (Telugu), tgl (Tagalog), tha (Thai), tur (Turkish), ukr (Ukrainian), urd (Urdu), uzb (Uzbek), vie (Vietnamese), yue (Cantonese)
+- **4830 Translation Directions** - Supports all 4830 possible translation directions (70×69 language pairs)
 
 ## Installation
 ```
