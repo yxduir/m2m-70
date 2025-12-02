@@ -43,3 +43,28 @@ It requires GPUs with 80GB VRAM, with support for BF16 only.
 ```
 bash scripts/infer_demo.sh
 ```
+
+## Train
+Please refer to [ours previous work](https://github.com/yxduir/LLM-SRT).
+
+##  Citation
+You can refer to the paper for more results. 
+```
+@misc{du2025mcatscalingmanytomanyspeechtotext,
+      title={MCAT: Scaling Many-to-Many Speech-to-Text Translation with MLLMs to 70 Languages}, 
+      author={Yexing Du and Kaiyuan Liu and Youcheng Pan and Bo Yang and Keqi Deng and Xie Chen and Yang Xiang and Ming Liu and Bin Qin and YaoWei Wang},
+      year={2025},
+      eprint={2512.01512},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2512.01512}, 
+}
+
+@article{du2025speech2text,  
+  title     = {Making LLMs Better Many-to-Many Speech-to-Text Translators with Curriculum Learning},
+  author    = {Du, Yexing and Pan, Youcheng and Ma, Ziyang and Yang, Bo and Yang, Yifang and Deng, Keqi and Chen, Xie and Xiang, Yang and Liu, Ming and Qin, Bing},
+  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025)},
+  year      = {2025},
+}
+
+```
