@@ -34,6 +34,7 @@ Access to the Gemma models is required before downloading.
 
 ```
 cd models/
+
 # Total 75G of storage space for models
 hf download yxdu/mcat-large --local-dir mcat-large
 hf download openai/whisper-large-v3 --local-dir whisper-large-v3
