@@ -11,6 +11,9 @@
 
 ## Installation
 ```
+# Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 git clone https://github.com/yxduir/m2m-70
 cd m2m-70
 uv venv --python 3.10
