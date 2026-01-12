@@ -11,18 +11,18 @@
 
 ## Installation
 ```
-conda create -n m2m-70 python=3.10
-conda activate m2m-70
+uv venv --python 3.10
+source .venv/bin/activate
+
 
 git clone https://github.com/yxduir/m2m-70
 cd m2m-70/SLAM-LLM
 
 sudo apt update
 sudo apt install ffmpeg
-sudo apt install git-lfs
 
-pip install -r requirements.txt
-pip install -e .
+uv pip install -r requirements.txt
+uv pip install -e .
 cd ..
 ```
 
@@ -34,23 +34,48 @@ Encoder | Adapter | LLM
 Access to the Gemma models is required before downloading.
 
 ```
+# Total 96G of storage space for all models
 cd models/
 
-# Total 75G of storage space for models
+# Total 75G of storage space for 27B models
 hf download yxdu/mcat-large --local-dir mcat-large
 hf download openai/whisper-large-v3 --local-dir whisper-large-v3
 hf download google/gemma-3-27b-it --local-dir gemma-3-27b-it
 
+# Total 43G of storage space for 9B models
+hf download yxdu/mcat-small --local-dir mcat-small
+hf download openai/whisper-large-v3 --local-dir whisper-large-v3
+hf download ModelSpace/GemmaX2-28-9B-v0.1 --local-dir GemmaX2-28-9B-v0.1
+
+#Total 2G of storage space for eval model
+hf download Unbabel/wmt22-comet-da --local-dir wmt22-comet-da
+
 cd ..
 ```
 
+## Demo Data Download
+```
+# Total 6G of storage space for demo data
+cd ./data
+bash download_demo_data.sh
+cd ..
+```
 
 ## Infer Demo
-This is a demo inference script, covering translation between 70 languages, with a total of 70×69=4,830 directions.
-This demo downloads the 9 GB dataset from HuggingFace.
-It requires GPUs with 80GB VRAM, with support for BF16 only.
 ```
-bash scripts/infer_demo.sh
+This is a demo for 70 languages, with a total of 4,830 directions.
+It requires GPUs with 80GB VRAM (only support BF16).
+bash scripts/infer_demo_27b.sh
+
+This is a demo for 28 languages, with a total of 756 directions.
+It requires GPUs with 24GB VRAM (only support BF16).
+bash scripts/infer_demo_9b.sh
+```
+
+##Eval
+```
+cd eval
+python ./test_metric_n.py
 ```
 
 ## Train

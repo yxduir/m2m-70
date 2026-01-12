@@ -1,10 +1,8 @@
-## Demo Dataset Download
-This is an automatic inference script for the fleurs dataset from English (eng) to Chinese (cmn).
+## Demo Data Download
 ```
 cd data/
-git lfs clone https://huggingface.co/datasets/yxdu/srt-demo-s2tt-70 s2tt
-cd s2tt
-tar -zxvf audio.tar.gz
+bash download_demo_data.sh
+cd ..
 ```
 
 ## Train Dataset
