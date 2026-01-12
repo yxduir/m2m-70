@@ -75,7 +75,7 @@ It requires GPUs with 24GB VRAM (only support BF16).
 bash scripts/infer_demo_small_9b.sh
 ```
 
-##Eval
+## COMET Eval
 ```
 cd eval
 python test_metric_n.py
