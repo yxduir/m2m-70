@@ -27,48 +27,17 @@ beam=1
 validnum=-2
 
 encoder_path_hf=${code}/../models/whisper-large-v3
-ckpt_name=${code}/../models/mcat-large/mcat_large_27b.pt
-llm_path=${code}/../models/gemma-3-27b-it
+ckpt_name=${code}/../models/mcat-small/mcat_small_9b.pt
+llm_path=${code}/../models/GemmaX2-28-9B-v0.1
 val_data_path=${code}/../data/s2tt/srt_demo_70.jsonl
 
 data_dir="${code}/../data"
-
-# 检查并下载函数
-check_and_download() {
-    local path="$1"
-    local url="$2"
-    local name="$3"
-    
-    if [ ! -e "$path" ]; then
-        echo "下载: $name"
-        cd "$(dirname "$path")"
-        git lfs clone "$url" "$(basename "$path")"
-    else
-        echo "已存在: $name"
-    fi
-}
-
-# 检查数据
-if [ ! -f "${data_dir}/s2tt/srt_demo_70.jsonl" ]; then
-    check_and_download "${data_dir}/s2tt" "https://huggingface.co/datasets/yxdu/srt-demo-s2tt-70" "演示数据"
-    # 解压音频
-    if [ -f "${data_dir}/s2tt/audio.tar.gz" ]; then
-        echo "解压音频文件..."
-        tar -zxvf "${data_dir}/s2tt/audio.tar.gz" -C "${data_dir}/s2tt"
-    fi
-else
-    echo "已存在: 演示数据"
-fi
-
-echo "=== 检查完成 ==="
-
-
 
 
 echo "${val_data_path}"
 mode=srt
 encoder_projector=qqm
-source=all
+source=2828
 peft=true
 freeze_llm="false"
 
@@ -102,7 +71,7 @@ torchrun \
     ++fsdp_config.pure_bf16=true \
     ++model_config.llm_name=$llm_name \
     ++model_config.llm_path=$llm_path \
-    ++model_config.llm_dim=5376 \
+    ++model_config.llm_dim=3584 \
     ++model_config.query_len=$query_len \
     ++model_config.encoder_name=whisper \
     ++model_config.encoder_projector_ds_rate=5 \
@@ -126,7 +95,7 @@ torchrun \
     ++train_config.freeze_llm=$freeze_llm \
     ++train_config.batching_strategy=custom \
     ++train_config.num_epochs=1 \
-    ++train_config.val_batch_size=64 \
+    ++train_config.val_batch_size=16 \
     ++train_config.num_workers_dataloader=16 \
     ++log_config.decode_log=$decode_log \
     ++ckpt_path=$ckpt_name \

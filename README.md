@@ -11,16 +11,14 @@
 
 ## Installation
 ```
+git clone https://github.com/yxduir/m2m-70
+cd m2m-70
 uv venv --python 3.10
 source .venv/bin/activate
 
-
-git clone https://github.com/yxduir/m2m-70
-cd m2m-70/SLAM-LLM
-
+cd SLAM-LLM
 sudo apt update
 sudo apt install ffmpeg
-
 uv pip install -r requirements.txt
 uv pip install -e .
 cd ..
@@ -56,26 +54,28 @@ cd ..
 ## Demo Data Download
 ```
 # Total 6G of storage space for demo data
-cd ./data
+cd data
 bash download_demo_data.sh
 cd ..
 ```
 
 ## Infer Demo
 ```
+Modify train_config.val_batch_size to change the batch size. The default value is kept low to avoid OOM.
+
 This is a demo for 70 languages, with a total of 4,830 directions.
 It requires GPUs with 80GB VRAM (only support BF16).
-bash scripts/infer_demo_27b.sh
+bash scripts/infer_demo_large_27b.sh
 
 This is a demo for 28 languages, with a total of 756 directions.
 It requires GPUs with 24GB VRAM (only support BF16).
-bash scripts/infer_demo_9b.sh
+bash scripts/infer_demo_small_9b.sh
 ```
 
 ##Eval
 ```
 cd eval
-python ./test_metric_n.py
+python test_metric_n.py
 ```
 
 ## Train
@@ -83,19 +83,18 @@ Please refer to [ours previous work](https://github.com/yxduir/LLM-SRT).
 
 ##  Citation
 ```
-@misc{du2025mcatscalingmanytomanyspeechtotext,
-      title={MCAT: Scaling Many-to-Many Speech-to-Text Translation with MLLMs to 70 Languages}, 
-      author={Yexing Du and Kaiyuan Liu and Youcheng Pan and Bo Yang and Keqi Deng and Xie Chen and Yang Xiang and Ming Liu and Bin Qin and YaoWei Wang},
-      year={2025},
-      eprint={2512.01512},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2512.01512}, 
+@article{du2025mcat,
+  title={MCAT: Scaling Many-to-Many Speech-to-Text Translation with MLLMs to 70 Languages},
+  author={Du, Yexing and Liu, Kaiyuan and Pan, Youcheng and Yang, Bo and Deng, Keqi and Chen, Xie and Xiang, Yang and Liu, Ming and Qin, Bin and Wang, YaoWei},
+  journal={arXiv preprint arXiv:2512.01512},
+  year={2025}
 }
-@article{du2025speech2text,  
-  title     = {Making LLMs Better Many-to-Many Speech-to-Text Translators with Curriculum Learning},
-  author    = {Du, Yexing and Pan, Youcheng and Ma, Ziyang and Yang, Bo and Yang, Yifang and Deng, Keqi and Chen, Xie and Xiang, Yang and Liu, Ming and Qin, Bing},
-  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025)},
-  year      = {2025},
+
+@inproceedings{du2025making,
+  title={Making llms better many-to-many speech-to-text translators with curriculum learning},
+  author={Du, Yexing and Pan, Youcheng and Ma, Ziyang and Yang, Bo and Yang, Yifan and Deng, Keqi and Chen, Xie and Xiang, Yang and Liu, Ming and Qin, Bing},
+  booktitle={Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages={12466--12478},
+  year={2025}
 }
 ```

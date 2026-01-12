@@ -6,14 +6,10 @@ Encoder | Adapter | LLM
 Access to the Gemma models is required before downloading.
 
 ```
+# Total 96G of storage space for all models
 cd models/
-hf download yxdu/mcat-large --local-dir mcat-large
-hf download openai/whisper-large-v3 --local-dir whisper-large-v3
-hf download google/gemma-3-27b-it --local-dir gemma-3-27b-it
+bash download_model.sh
+cd ..
 ```
 
 
-## Evaluation Model 
-```
-hf download google/Unbabel/wmt22-cometkiwi-da --local-dir wmt22-cometkiwi-da
-```

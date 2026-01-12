@@ -27,8 +27,8 @@ beam=1
 validnum=-2
 
 encoder_path_hf=${code}/../models/whisper-large-v3
-ckpt_name=${code}/../models/mcat-small/mcat_small_9b.pt
-llm_path=${code}/../models/GemmaX2-28-9B-v0.1
+ckpt_name=${code}/../models/mcat-large/mcat_large_27b.pt
+llm_path=${code}/../models/gemma-3-27b-it
 val_data_path=${code}/../data/s2tt/srt_demo_70.jsonl
 
 data_dir="${code}/../data"
@@ -37,7 +37,7 @@ data_dir="${code}/../data"
 echo "${val_data_path}"
 mode=srt
 encoder_projector=qqm
-source=2828
+source=all
 peft=true
 freeze_llm="false"
 
@@ -71,7 +71,7 @@ torchrun \
     ++fsdp_config.pure_bf16=true \
     ++model_config.llm_name=$llm_name \
     ++model_config.llm_path=$llm_path \
-    ++model_config.llm_dim=3584 \
+    ++model_config.llm_dim=5376 \
     ++model_config.query_len=$query_len \
     ++model_config.encoder_name=whisper \
     ++model_config.encoder_projector_ds_rate=5 \
