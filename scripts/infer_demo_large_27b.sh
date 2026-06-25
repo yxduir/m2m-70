@@ -95,7 +95,7 @@ torchrun \
     ++train_config.freeze_llm=$freeze_llm \
     ++train_config.batching_strategy=custom \
     ++train_config.num_epochs=1 \
-    ++train_config.val_batch_size=32 \
+    ++train_config.val_batch_size=128 \
     ++train_config.num_workers_dataloader=16 \
     ++log_config.decode_log=$decode_log \
     ++ckpt_path=$ckpt_name \

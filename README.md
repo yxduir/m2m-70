@@ -1,9 +1,7 @@
 # MCAT Models
 
 
-**LLM-SRT (v1.0) paper**: [https://arxiv.org/abs/2409.19510](https://arxiv.org/abs/2409.19510) [ACL 2025 Main]; 
-
-**MCAT (v2.0) paper**: [https://arxiv.org/abs/2512.01512v1](https://arxiv.org/abs/2512.01512v1); 
+**MCAT (v2.0) paper**: [https://arxiv.org/abs/2512.01512v1](https://arxiv.org/abs/2512.01512v1) [IEEE TASLP 2026]; 
 
 ✅ **Current Version MCAT (v2.0)**  
 - **Task**: Speech-to-Text Translation (S2TT)
@@ -88,12 +86,16 @@ Please refer to [ours previous work](https://github.com/yxduir/LLM-SRT).
 
 ##  Citation
 ```
-@article{du2025mcat,
-  title={MCAT: Scaling Many-to-Many Speech-to-Text Translation with MLLMs to 70 Languages},
-  author={Du, Yexing and Liu, Kaiyuan and Pan, Youcheng and Yang, Bo and Deng, Keqi and Chen, Xie and Xiang, Yang and Liu, Ming and Qin, Bin and Wang, YaoWei},
-  journal={arXiv preprint arXiv:2512.01512},
-  year={2025}
-}
+@ARTICLE{11481964,
+  author={Du, Yexing and Liu, Kaiyuan and Pan, Youcheng and Yang, Bo and Deng, Keqi and Chen, Xie and Xiang, Yang and Liu, Ming and Qin, Bing and Wang, YaoWei},
+  journal={IEEE Transactions on Audio, Speech and Language Processing}, 
+  title={MCAT: Scaling Many-to-Many Speech-to-Text Translation With MLLMs to 70 Languages}, 
+  year={2026},
+  volume={34},
+  number={},
+  pages={2876-2887},
+  keywords={Feeds;Radio broadcasting;Frequency modulation;LoRa;Electronic mail;Video games;Videos;Internet;Video equipment;Modulation;Speech-to-text translation;multimodal large language models;curriculum learning},
+  doi={10.1109/TASLPRO.2026.3684396}}
 
 @inproceedings{du2025making,
   title={Making llms better many-to-many speech-to-text translators with curriculum learning},
